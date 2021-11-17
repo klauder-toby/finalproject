@@ -1,9 +1,11 @@
 var url = "https://www.carboninterface.com/api/v1/estimates";
+var token = config.API_KEY; 
+
 
 var xhr = new XMLHttpRequest();
 xhr.open("POST", url);
 
-xhr.setRequestHeader("Authorization", "Bearer 7ZnGZ14gHXFw9RnZG4E1jA");
+xhr.setRequestHeader("Authorization", "Bearer " + token);
 xhr.setRequestHeader("Content-Type", "application/json");
 xhr.setRequestHeader("Content-Length", "0");
 
