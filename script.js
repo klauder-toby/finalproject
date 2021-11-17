@@ -13,10 +13,4 @@ xhr.onreadystatechange = function () {
       console.log(xhr.responseText);
    }};
 
-xhr.send(JSON.stringify({
-        "type": "electricity",
-        "electricity_unit": "mwh",
-        "electricity_value": 42,
-        "country": "us",
-        "state": "fl"
-      }));
+xhr.send(JSON.stringify({}));
