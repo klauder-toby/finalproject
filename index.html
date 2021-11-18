@@ -13,10 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
   </head>
-  <body>
-
-    <h1><strong>Carbon Calculator</strong></h1>
-
+  <body id="body">
+    <img src="earth.png" class="earth" align="right">
+    <div class="leftcenter"> 
+      <h1><strong>Carbon Calculator</strong></h1>
     <div class="accordion" id="collapseSelector">
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
@@ -28,9 +28,9 @@
           <div class="accordion-body">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">MWH</span>
-                <input type="text" class="form-control" placeholder="Mega Watt Hours" aria-label="units" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Mega Watt Hours" aria-label="units" aria-describedby="basic-addon1" id="electricityUnits">
               </div>
-          <select id="country" name="country" class="form-select" aria-label="Default select example">
+          <select id="electricityCountry" name="country" class="form-select" aria-label="Default select example" style="z-index:2">
             <option>United States of America</option>
             <option>Canada</option>
             <option>Austria</option> 
@@ -64,6 +64,8 @@
             <option>Sweden</option> 
             <option>United Kingdom</option> 
           </select>
+          <button type="button" class="btn btn-light" style="margin-top:20px" id="electricitySubmit">Submit</button>
+          <p id="electricityError" style="margin-top: 20px"></p>
           </div>
         </div>
       </div>
@@ -104,8 +106,11 @@
         </div>
       </div>
     </div>
-
+    <div id="results" style="height:25%"> 
+      <h3 style="text-align:center;" id="resultHeader"><strong>Results</strong></h3>
+      <p id="resultbody"></p> 
+    </div>
+  </div> 
     <script src="script.js"></script>
-    <script type='text/javascript' src='config.js'></script>
   </body>
 </html>
