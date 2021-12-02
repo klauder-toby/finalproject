@@ -87,16 +87,16 @@ function getCard() {
            console.log(response[0]["data"]["attributes"]["diet_habit"]);
           for (let i = 0; i < response.length; i++) {
             let value = profileNameGet.value.toLowerCase(); 
-            console.log("Value - " + value); 
-            console.log("Comparison - " + response[i]["data"]["attributes"]["external_id"]); 
-            console.log(value == response[i]["data"]["attributes"]["external_id"]);
-
             if(value == response[i]["data"]["attributes"]["external_id"].toLowerCase()) {
             dataGetText.innerHTML = "<h4> Data for "+ profileNameGet.value + "</h4> <br> <p> Habit: " + response[i]["data"]["attributes"]["diet_habit"] + "<br> Transportation: " + response[i]["data"]["attributes"]["transportation_method"] + "</p> <br> ID: " + response[i]["data"]["id"];
             profileNameGet.style.border = "1px solid";
-          }
-         }
+            break; 
+          } else {
+          profileNameGet.style.border = "1px solid red"; 
+          dataGetText.innerHTML = "There was a problem with your request - ensure you entered the same name you used to create your profile."; 
         }
+         }
+        } 
         }
       }};
 
@@ -307,7 +307,7 @@ function submitElectricityRequest() {
         //if the request is good, parse it and display output 
          if(xhr.status == 201) {
            response = JSON.parse(xhr.responseText);
-           electricityText.innerHTML = "<h3><strong>Results : Electricity</strong></h3><br> Carbon (in pounds): " + response["data"]["attributes"]["carbon_lb"];  
+           electricityText.innerHTML = "<h4><strong>Results : Electricity</strong></h4><br> Carbon (in pounds): " + response["data"]["attributes"]["carbon_lb"];  
          } 
       }};
 
@@ -403,7 +403,7 @@ function submitShippingRequest() {
         console.log(xhr.status); 
          if(xhr.status == 201) {
            response = JSON.parse(xhr.responseText);
-           shippingText.innerHTML = "<h3><strong>Results : Shipping</strong></h3> <br> Carbon (in pounds): " + response["data"]["attributes"]["carbon_lb"];  
+           shippingText.innerHTML = "<h4><strong>Results : Shipping</strong></h4> <br> Carbon (in pounds): " + response["data"]["attributes"]["carbon_lb"];  
          } 
       }};
 
@@ -418,6 +418,7 @@ function submitShippingRequest() {
 }
 
 function submitFlightRequest() {
+  legs = []; 
   if(isNaN(passengerCount.value) || passengerCount.value == null || passengerCount.value.replace(/\s/g, "") == "") {
     passengerCountEntered = false; 
     passengerCount.style.border = "1px solid red";
@@ -476,9 +477,7 @@ function submitFlightRequest() {
       if (xhr.readyState === 4) {
          if(xhr.status == 201) {
            response = JSON.parse(xhr.responseText);
-           flightErrorText.innerHTML = "<h3><strong>Results : Flight</strong></h3><br> Carbon (in pounds): " + response["data"]["attributes"]["carbon_lb"]; 
-           resultHeader.innerHTML = "<h3><strong>Results : Flight</strong></h3>"
-           resultbody.innerHTML = "Carbon (in pounds): " + response["data"]["attributes"]["carbon_lb"]; 
+           flightErrorText.innerHTML = "<h4><strong>Results : Flight</strong></h4><br> Carbon (in pounds): " + response["data"]["attributes"]["carbon_lb"]; 
          } 
       }};
 
