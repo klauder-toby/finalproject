@@ -68,10 +68,10 @@ let resultHeader = document.getElementById("resultHeader");
 
 function getCard() {
   var xhr = new XMLHttpRequest();
-   xhr.open("GET", 'https://www.carboninterface.com/api/v1/carbon_ledger/programs/97dd35c9-8df3-400d-910f-e49e4dae256b/card_profiles');
+   xhr.open("GET", 'https://www.carboninterface.com/api/v1/carbon_ledger/programs/f4edb32c-6163-4809-bb11-119c66baffb8/card_profiles');
 
   //set request headers 
-   xhr.setRequestHeader("Authorization", "Bearer 7ZnGZ14gHXFw9RnZG4E1jA");
+   xhr.setRequestHeader("Authorization", "Bearer Xwg7vt5b1sz713gRkUjIw");
    xhr.setRequestHeader("Content-Type", "application/json");
 
   //when state changes
@@ -131,10 +131,10 @@ function createCard() {
     profileName.style.border = "1px solid";
     //generate request 
    var xhr = new XMLHttpRequest();
-   xhr.open("POST", "https://www.carboninterface.com/api/v1/carbon_ledger/programs/97dd35c9-8df3-400d-910f-e49e4dae256b/card_profiles");
+   xhr.open("POST", "https://www.carboninterface.com/api/v1/carbon_ledger/programs/f4edb32c-6163-4809-bb11-119c66baffb8/card_profiles");
 
   //set request headers 
-   xhr.setRequestHeader("Authorization", "Bearer 7ZnGZ14gHXFw9RnZG4E1jA");
+   xhr.setRequestHeader("Authorization", "Bearer Xwg7vt5b1sz713gRkUjIw");
    xhr.setRequestHeader("Content-Type", "application/json");
 
   //when state changes
@@ -298,7 +298,7 @@ function submitElectricityRequest() {
    xhr.open("POST", baseurl);
 
   //set request headers 
-   xhr.setRequestHeader("Authorization", "Bearer 7ZnGZ14gHXFw9RnZG4E1jA");
+   xhr.setRequestHeader("Authorization", "Bearer Xwg7vt5b1sz713gRkUjIw");
    xhr.setRequestHeader("Content-Type", "application/json");
 
   //when state changes
@@ -394,7 +394,7 @@ function submitShippingRequest() {
    xhr.open("POST", baseurl
   );
 
-   xhr.setRequestHeader("Authorization", "Bearer 7ZnGZ14gHXFw9RnZG4E1jA");
+   xhr.setRequestHeader("Authorization", "Bearer Xwg7vt5b1sz713gRkUjIw");
    xhr.setRequestHeader("Content-Type", "application/json");
 
 
@@ -470,7 +470,7 @@ function submitFlightRequest() {
      var xhr = new XMLHttpRequest();
     xhr.open("POST", baseurl);
 
-    xhr.setRequestHeader("Authorization", "Bearer 7ZnGZ14gHXFw9RnZG4E1jA");
+    xhr.setRequestHeader("Authorization", "Bearer Xwg7vt5b1sz713gRkUjIw");
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onreadystatechange = function () {
